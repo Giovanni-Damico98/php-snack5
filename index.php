@@ -1,3 +1,6 @@
+<?php
+include 'functions.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,13 +14,28 @@
 
 <body>
     <div class="container-fluid text-center mt-3">
-        <h1>E' Palindroma?</h1>
-        <form action="get">
-            <label for="stringInput">Inserisci una parola per verificare che sia palindroma</label>
-            <input type="text" id="stringInput" name="stringInput" placeholder="Inserisci una parola" required>
-            <input type="submit" value="Invia">
+        <h1>È Palindroma?</h1>
 
+        <form method="get" action="">
+            <label for="stringInput">Inserisci una parola per verificare se è palindroma</label>
+            <input type="text" id="stringInput" name="stringInput" placeholder="Inserisci una parola" required>
+            <input type="submit" value="Invia" class="btn btn-primary mt-3">
         </form>
+
+        <?php
+        // Verifica se il form è stato inviato
+        if (isset($_GET['stringInput'])) {
+            $parolaInserita = $_GET['stringInput'];
+
+            // Chiama la funzione per verificare se è palindroma
+            if (isPalindroma($parolaInserita)) {
+                // Creo i paragrafi da inserire in pagina per visualizzare i risultati
+                echo "<p class='mt-4 text-success'>La parola <strong>'" . ($parolaInserita) . "'</strong> è palindroma!</p>";
+            } else {
+                echo "<p class='mt-4 text-danger'>La parola <strong>'" . ($parolaInserita) . "'</strong> non è palindroma.</p>";
+            }
+        }
+        ?>
     </div>
 
 </body>

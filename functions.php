@@ -1,18 +1,16 @@
 <?php
-
-
 function isPalindroma($parola)
 {
+    // Inizializza la variabile come falso
     $isPalindroma = false;
     $parole = [];
-    // Aggiungo la parola all'array
+    // Aggiungi la parola all'array
     $parole[] = $parola;
-    // Invertiamo la parola
+    // Inverti la parola
     $parolaInvertita = strrev($parola);
+    // Controlla se la parola è palindroma
     if ($parola === $parolaInvertita) {
         $isPalindroma = true;
-        return $isPalindroma;
-    } else {
-        return $isPalindroma;
     }
+    return $isPalindroma;
 }
