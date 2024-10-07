@@ -12,7 +12,12 @@
 <body>
     <div class="container-fluid text-center mt-3">
         <h1>E' Palindroma?</h1>
-        <p>Inserisci una parola per verificare se sia palindroma</p>
+        <form action="get">
+            <label for="stringInput">Inserisci una parola per verificare che sia palindroma</label>
+            <input type="text" id="stringInput" name="stringInput" placeholder="Inserisci una parola" required>
+            <input type="submit" value="Invia">
+
+        </form>
     </div>
 
 </body>
